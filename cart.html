@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KPKDQ3S');</script>
+  <!-- End Google Tag Manager -->
+  
   <meta charset="UTF-8" />
   <title>Pages B</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  
-  <!-- start of blis pixel -->
-  <script type="text/javascript" src="https://bliseng.github.io/pages-a/p.js?v=0.1" async="true"></script>
-  <script>
-    window.blis_q = window.blis_q || [];
-    window.blis_q.push({ event_type: "setPixelId", id: "9be40601-7c76-4e36-86e4-ae0064931b08" });
-  </script>
-  <!-- end of blis pixel -->
-  
+  <meta name="viewport" content="width=device-width,initial-scale=1" />  
   <script>
     var prices = {
       mango: 0.7,
@@ -34,11 +33,6 @@
       });
       
       if (quantity > 0) {
-        /* start of blis pixel */ 
-        window.blis_q = window.blis_q || [];
-        window.blis_q.push({ event_type: "Purchase", order_id, value, currency, quantity });
-        /* end of blis pixel */
-
         products.forEach(function(name) {
           localStorage.removeItem(name);
         });
@@ -49,6 +43,11 @@
   </script>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPKDQ3S"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
   <h1>Cart</h1>
   <table>
   	<tbody>
