@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KPKDQ3S');</script>
+  <!-- End Google Tag Manager -->
+  
+  <meta charset="UTF-8" />
+  <title>Pages B</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />  
+  <script>
+    var prices = {
+      mango: 0.7,
+      pomegranate: 1.5
+    }
+    function addToCart(itemName) {      
+      let count = localStorage.getItem(itemName);
+      count = count ? parseInt(count) : 0;
+      count++;
+      localStorage.setItem(itemName, count);
+    };
+  </script>
+</head>
+<body>  
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KPKDQ3S"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <h1>Products</h1>
+  <table>
+  	<tbody>
+  		<tr>
+  			<td>Mango</td>
+  			<td><button onclick="addToCart('mango')">+ Add to cart</button></td>
+  		</tr>
+  		<tr>
+  			<td>Pomegranate</td>
+  			<td><button onclick="addToCart('pomegranate')">+ Add to cart</button></td>
+  		</tr>
+  	</tbody>
+  </table>
+  <a href="cart">Go to cart</a>
+</body>
+</html>
