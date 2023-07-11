@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+  </script>
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -17,7 +20,9 @@
       mango: 0.7,
       pomegranate: 1.5
     }
-    function addToCart(itemName) {      
+    function addToCart(itemName) {
+      window.dataLayer.push({ event: "addToCart", value: prices[itemName], currency: 'EUR', quantity: 1 });
+      
       let count = localStorage.getItem(itemName);
       count = count ? parseInt(count) : 0;
       count++;
