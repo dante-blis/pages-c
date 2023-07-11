@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pages B</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <!-- start of blis pixel -->
+  <script type="text/javascript" src="https://bliseng.github.io/pages-a/p.js?v=0.1" async="true"></script>
+  <script>
+    window.blis_q = window.blis_q || [];
+    window.blis_q.push({ event_type: "setPixelId", id: "9be40601-7c76-4e36-86e4-ae0064931b08" });
+  </script>
+  <!-- end of blis pixel -->
+  
+  <script>
+    var prices = {
+      mango: 0.7,
+      pomegranate: 1.5
+    }
+    
+    function purchase() {
+      var order_id = Math.round(Math.random() * 10000);
+      var value = 0;
+      var currency = 'EUR';
+      var quantity = 0;
+      products.forEach(function(name) {
+        if (localStorage.getItem(name)) {
+          var count = parseInt(localStorage.getItem(name));
+          var price = prices[name];
+          quantity += count;
+          value += count * price;
+        }
+      });
+      
+      if (quantity > 0) {
+        /* start of blis pixel */ 
+        window.blis_q = window.blis_q || [];
+        window.blis_q.push({ event_type: "Purchase", order_id, value, currency, quantity });
+        /* end of blis pixel */
+
+        products.forEach(function(name) {
+          localStorage.removeItem(name);
+        });
+
+        window.location = '/pages-b';
+      }
+    };
+  </script>
+</head>
+<body>
+  <h1>Cart</h1>
+  <table>
+  	<tbody>
+  		<tr>
+  			<td>Mango</td>
+  			<td id="mangoCount"></td>
+  		</tr>
+  		<tr>
+  			<td>Pomegranate</td>
+  			<td id="pomegranateCount"></td>
+  		</tr>
+  	</tbody>
+  </table>
+  <button onclick="purchase()">Purchase</button>
+  <a href="/pages-b">Cancel</a>
+  
+  <script>
+    var products = ['mango', 'pomegranate'];
+    products.forEach(function(name) {
+      document.getElementById(name + "Count").innerText = localStorage.getItem(name) || 0;
+    });
+  </script>
+</body>
+</html>
