@@ -21,7 +21,7 @@
       pomegranate: 1.5
     }
     function addToCart(itemName) {
-      window.dataLayer.push({ event: "addToCart", value: prices[itemName], currency: 'EUR', quantity: 1 });
+      window.dataLayer.push({ event: "addToCart", price: prices[itemName], currency: 'EUR', quantity: 1 });
       
       let count = localStorage.getItem(itemName);
       count = count ? parseInt(count) : 0;
